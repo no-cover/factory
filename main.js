@@ -45,28 +45,28 @@ var init = function () {
 
 
 function onAppControlReceived() {
-	console.log('[Apps][Main.js] : onAppControlReceived');
+	// console.log('[Apps][Main.js] : onAppControlReceived');
     // var reqAppControl = tizen.application.getCurrentApplication().getRequestedAppControl();
-    if (reqAppControl && reqAppControl.appControl !== null) {
-    	console.log("[Apps][Main.js]  [length]=[" + reqAppControl.appControl.data.length + "]");
-        console.log("[Apps][Main.js]  [data]=" + JSON.stringify(reqAppControl.appControl.data));
+    // if (reqAppControl && reqAppControl.appControl !== null) {
+    // 	console.log("[Apps][Main.js]  [length]=[" + reqAppControl.appControl.data.length + "]");
+    //     console.log("[Apps][Main.js]  [data]=" + JSON.stringify(reqAppControl.appControl.data));
         
-        var payloadValue = '';
-		var previewAppid = '';
-        for (var i = 0; i < reqAppControl.appControl.data.length; i++) {
-            var fileId = undefined;
-            console.log("[Apps][Main.js] data[" + i + "] key=" + JSON.stringify(reqAppControl.appControl.data[i].key) + " value=" + JSON.stringify(reqAppControl.appControl.data[i].value));
+    //     var payloadValue = '';
+	// 	var previewAppid = '';
+    //     for (var i = 0; i < reqAppControl.appControl.data.length; i++) {
+    //         var fileId = undefined;
+    //         console.log("[Apps][Main.js] data[" + i + "] key=" + JSON.stringify(reqAppControl.appControl.data[i].key) + " value=" + JSON.stringify(reqAppControl.appControl.data[i].value));
 
-            if (reqAppControl.appControl.data[i].key === "PAYLOAD") {
-                payloadValue = reqAppControl.appControl.data[i].value[0];
-				payloadValue = JSON.parse(payloadValue);
-				console.log("[Apps][Main.js] payloadValue=" + JSON.stringify(payloadValue));
-				if(payloadValue !== null && payloadValue.values !== null){
-					previewAppid = payloadValue.values;
-					console.log("[Apps][Main.js] previewAppid=" + JSON.stringify(previewAppid));
-				}	
-            }
-        }
+    //         if (reqAppControl.appControl.data[i].key === "PAYLOAD") {
+    //             payloadValue = reqAppControl.appControl.data[i].value[0];
+	// 			payloadValue = JSON.parse(payloadValue);
+	// 			console.log("[Apps][Main.js] payloadValue=" + JSON.stringify(payloadValue));
+	// 			if(payloadValue !== null && payloadValue.values !== null){
+	// 				previewAppid = payloadValue.values;
+	// 				console.log("[Apps][Main.js] previewAppid=" + JSON.stringify(previewAppid));
+	// 			}	
+    //         }
+    //     }
         
         
         if(previewAppid !== null && previewAppid !== ''){
