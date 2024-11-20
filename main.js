@@ -46,7 +46,7 @@ var init = function () {
 
 function onAppControlReceived() {
 	console.log('[Apps][Main.js] : onAppControlReceived');
-    var reqAppControl = tizen.application.getCurrentApplication().getRequestedAppControl();
+    // var reqAppControl = tizen.application.getCurrentApplication().getRequestedAppControl();
     if (reqAppControl && reqAppControl.appControl !== null) {
     	console.log("[Apps][Main.js]  [length]=[" + reqAppControl.appControl.data.length + "]");
         console.log("[Apps][Main.js]  [data]=" + JSON.stringify(reqAppControl.appControl.data));
